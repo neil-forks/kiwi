@@ -246,7 +246,7 @@ class DiskFormatVagrantBase(DiskFormatBase):
 
     def _create_box_info(self) -> Optional[str]:
         """Serialize Vagrant box info as a JSON string, if present"""
-        vagrant_info = self.xml_state.get_build_type_vagrant_config_section().get_info()
+        vagrant_info = self.vagrantconfig.get_info()
         if not vagrant_info:
             return None
         info: Dict[str, str] = {}
